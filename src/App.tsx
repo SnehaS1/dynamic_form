@@ -1,24 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import DynamicForm from "./Form";
+const formFields = [
+  {
+    id: "fullname",
+    label: "Full Name",
+    formType: "input",
+    required: true,
+    minLength: 5,
+    maxLength: 10,
+    pattern: "^[A-Za-z]+$",
+  },
+  {
+    id: "email",
+    label: "Email",
+    formType: "email",
+    required: true,
+  },
+  {
+    id: "country",
+    label: "Country",
+    formType: "select",
+    values: ["USA", "Canada", "Mexico"],
+    required: true,
+  },
+  {
+    id: "gender",
+    label: "Gender",
+    formType: "radio",
+    values: ["Male", "Female", "Other"],
+    required: true,
+  },
+  {
+    id: "hobbies",
+    label: "Hobbies",
+    formType: "checkbox",
+    values: ["Reading", "Traveling", "Cooking"],
+    required: true,
+  },
+];
 function App() {
+  const handleSubmit = (values: any) => {
+    console.log("Form Values:", values);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <DynamicForm fields={formFields} onSubmit={handleSubmit} />;
     </div>
   );
 }
