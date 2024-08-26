@@ -2,6 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import DynamicForm from "./Form";
+import DynamicForm2 from "./Form2";
 const formFields = [
   {
     id: "fullname",
@@ -46,7 +47,7 @@ function App() {
   };
   return (
     <div className="App">
-      <DynamicForm fields={formFields} onSubmit={handleSubmit} />;
+      <DynamicForm2 fields={formFields} onSubmit={handleSubmit} />;
     </div>
   );
 }
