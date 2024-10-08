@@ -3,26 +3,12 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 
-// interface FieldProps {
-//   id: string;
-//   label?: string;
-//   formType: 'input' | 'select' | 'email' | 'radio' | 'checkbox';
-//   required?: boolean;
-//   minLength?: number;
-//   maxLength?: number;
-//   pattern?: string;
-//   values?: string[];  // for select, radio, and checkbox fields
-// }
-
-// interface DynamicFormProps {
-//   fields: FieldProps[];
-//   onSubmit: (values: any) => void;
-// }
+import { useNavigate } from "react-router-dom";
 
 const DynamicForm2 = ({ fields, onSubmit }) => {
   const [areFieldsDisabled, setAreFieldsDisabled] = useState(false);
   const [isAnyFieldFilled, setIsAnyFieldFilled] = useState(false);
-
+  const navigate = useNavigate();
   // Building Yup validation schema dynamically
   const validationSchema = Yup.object(
     fields.reduce((schema, field) => {
@@ -98,6 +84,7 @@ const DynamicForm2 = ({ fields, onSubmit }) => {
                   return (
                     <input
                       {...controllerField}
+                      value={controllerField.value || ""}
                       type={field.formType === "email" ? "email" : "text"}
                       disabled={areFieldsDisabled && !controllerField.value}
                       onChange={(e) => {
@@ -190,7 +177,7 @@ const DynamicForm2 = ({ fields, onSubmit }) => {
       <button
         type="submit"
         className="submit-button"
-        disabled={areFieldsDisabled}
+        // disabled={areFieldsDisabled}
       >
         Submit
       </button>

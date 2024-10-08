@@ -36,3 +36,55 @@
     transform: rotate(360deg);
   }
 }
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* or any specific width */
+}
+
+.table-header,
+.table-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust number of columns */
+}
+
+.table-column {
+  padding: 10px;
+  border: 1px solid #ccc; /* Optional: for visual separation */
+}
+
+.table-header {
+  font-weight: bold;
+  background-color: #f0f0f0; /* Optional: for header styling */
+}
+
+.table-body .table-row {
+  display: contents; /* Ensures each row is treated as a grid item */
+}
+
+/* Deliquency Table */
+s table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+td {
+  width: 50px;
+  height: 50px;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+tbody td span {
+  font-size: 24px;
+}
