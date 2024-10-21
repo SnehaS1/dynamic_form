@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback-button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 120px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1000;
+  transition: height 0.3s ease-in-out;
+}
+
+.popup-content {
+  padding: 20px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #f0f0f0;
+  border: none;
+  font-size: 16px;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.add-feedback-form,
+.success-message,
+.view-feedback-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-feedback-form label,
+.add-feedback-form select,
+.add-feedback-form textarea {
+  width: 100%;
+  margin-top: 10px;
+}
+
+textarea {
+  padding: 10px;
+}
+
+.submit-btn,
+.view-feedback-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.success-message h3 {
+  margin-bottom: 20px;
+}
+
+.view-feedback-content p {
+  margin-top: 20px;
+}
