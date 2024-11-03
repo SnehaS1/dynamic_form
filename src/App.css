@@ -64,7 +64,7 @@
 }
 
 /* Deliquency Table */
-s table {
+table {
   width: 100%;
   border-collapse: collapse;
 }
@@ -87,4 +87,20 @@ thead {
 
 tbody td span {
   font-size: 24px;
+}
+
+.draggable-button {
+  position: fixed;
+  right: 10px;
+  bottom: 3px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.draggable-form {
+  position: fixed;
+  right: 10px;
+  bottom: 50px; /* Adjust this to set initial distance from button */
+  display: none; /* Initially hidden */
+  z-index: 999;
 }
